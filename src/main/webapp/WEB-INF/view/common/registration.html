@@ -1,0 +1,96 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Registration</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+
+    <!-- Bootstrap core CSS -->
+    <link href="static/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/list-groups.css" rel="stylesheet">
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+    <!-- Custom styles for this template -->
+    <link href="static/css/signin.css" rel="stylesheet">
+</head>
+<body class="text-center">
+<main class="form-sign-in">
+    <form method="post" action="/registration" th:object="${user}">
+        <img class="mb-4" src="static/img/pngtree-vector-coffee-icon-png-image_449722.jpg" alt="" width="72"
+             height="57">
+        <h1 class="h3 mb-3 fw-normal">Registration</h1>
+
+        <div class="list-group list-group-checkable">
+            <input class="list-group-item-check" type="radio" id="radioRole1" required th:field="*{role}"
+                   th:value="CLIENT"/>
+            <label class="list-group-item py-3" for="radioRole1">
+                Client
+            </label>
+
+            <input class="list-group-item-check" type="radio" id="radioRole2" required th:field="*{role}"
+                   th:value="ADMINISTRATOR"/>
+            <label class="list-group-item py-3" for="radioRole2">
+                Administrator
+            </label>
+        </div>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingName" required th:field="*{name}"/>
+            <label for="floatingName">Name</label>
+        </div>
+        <label th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></label>
+
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingSurname" required th:field="*{surname}"/>
+            <label for="floatingSurname">Surname</label>
+        </div>
+        <label th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}"></label>
+        <div class="form-floating">
+            <input type="email" class="form-control" id="floatingPhone" required th:field="*{email}"/>
+            <label for="floatingPhone">Email</label>
+        </div>
+        <label th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></label>
+        <div class="form-floating">
+            <input type="text" class="form-control" id="floatingEmail" required th:field="*{phoneNumber}"/>
+            <label for="floatingEmail">Phone Number</label>
+        </div>
+        <label th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"></label>
+        <div class="form-floating">
+            <input type="date" class="form-control" id="floatingDate" required th:field="*{birthday}"/>
+            <label for="floatingDate">Birthday</label>
+        </div>
+        <label th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}"></label>
+        <div class="form-floating">
+            <input type="text" class="form-control" required id="floatingLogin" th:field="*{login}"/>
+            <label for="floatingLogin">Login</label>
+        </div>
+        <label th:if="${#fields.hasErrors('login')}" th:errors="*{login}"></label>
+        <label th:text="${login_msg}"></label>
+        <div class="form-floating">
+            <input type="password" class="form-control" id="floatingPassword" required th:field="*{password}"/>
+            <label for="floatingPassword">Password</label>
+        </div>
+        <label th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></label>
+        <button class="w-100 btn btn-lg btn-primary">Sign-up</button>
+        <br/>
+        <!-- <p class="mt-5 mb-3 text-muted">${msg}</p>-->
+    </form>
+</main>
+</body>
+</html>
