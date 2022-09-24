@@ -33,3 +33,8 @@ First, an HTTP request occurs on the client side. This request is handled by the
 The Service contains the main application logic. The service calls certain methods from the DAO layer and manipulates them. For the DAO classes that the Service needs, an injection by Spring was created in advance.
 When one or another method from the DAO class was called by the Service, work begins on obtaining the hibernate session. After that, Hibernate himself will turn to the database, receive information, wrap it in the desired Entity and return it.
 After that, the Entity will return to the service, where some manipulation will be performed on it, and then it will return to the controller. The controller will put the Entity into the Model and give it to the client.
+
+
+### Below is the schema of the tables in my database.
+
+![Screenshot_1](https://user-images.githubusercontent.com/51529773/192093231-cef5f639-36f8-484d-8756-ee7cc594afd0.png)
