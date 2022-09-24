@@ -49,3 +49,4 @@ After that, the Entity will return to the service, where some manipulation will 
 + Hibernate Validator
 + Localization
 + Bootstrap
++ Password encoding
