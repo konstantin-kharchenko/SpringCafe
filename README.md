@@ -38,3 +38,14 @@ After that, the Entity will return to the service, where some manipulation will 
 ### Below is the schema of the tables in my database.
 
 ![Screenshot_1](https://user-images.githubusercontent.com/51529773/192093231-cef5f639-36f8-484d-8756-ee7cc594afd0.png)
+
+### Applied technologies:
++ Spring Core
++ Spring MVC
++ Hibernate
++ Mail Sender
++ Thymeleaf
++ MySQL
++ Hibernate Validator
++ Localization
++ Bootstrap
